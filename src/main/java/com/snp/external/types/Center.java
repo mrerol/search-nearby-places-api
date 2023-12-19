@@ -1,0 +1,18 @@
+package com.snp.external.types;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+@Getter
+@Setter
+public class Center {
+
+  @JsonProperty("latitude")
+  private Double latitude;
+
+  @JsonProperty("longitude")
+  private Double longitude;
+}

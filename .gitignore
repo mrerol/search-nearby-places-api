@@ -25,3 +25,4 @@ replay_pid*
 /.idea/
 /target/
 /snp.iml
+/src/main/resources/client.properties
