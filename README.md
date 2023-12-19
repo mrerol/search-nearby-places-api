@@ -1,2 +1,2 @@
-# nearby-place-search
+# search-nearby-place
 Nearby Places API
