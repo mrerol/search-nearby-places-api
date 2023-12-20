@@ -24,8 +24,8 @@ public class RestClientPortFactory {
 
   static {
     try {
-      API_KEY = AppConfig.getValue("API_KEY");
-      ENDPOINT = AppConfig.getValue("ENDPOINT");
+      API_KEY = AppConfig.getClientValue("API_KEY");
+      ENDPOINT = AppConfig.getClientValue("API_ENDPOINT");
       client =
           ClientBuilder.newClient()
               .register(new RestLoggingRequestFilter())

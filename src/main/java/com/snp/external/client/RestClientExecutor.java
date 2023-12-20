@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 public class RestClientExecutor {
 
   private static final Logger logger = LoggerFactory.getLogger(RestClientExecutor.class);
-
   private final String latitude;
   private final String longitude;
   private final String radius;

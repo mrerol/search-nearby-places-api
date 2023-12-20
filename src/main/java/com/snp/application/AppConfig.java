@@ -10,28 +10,48 @@ import org.slf4j.LoggerFactory;
 public class AppConfig {
 
   private static final Logger logger = LoggerFactory.getLogger(AppConfig.class);
-  private static ResourceBundle resource;
+  private static ResourceBundle clientResource;
+  private static ResourceBundle appResource;
 
   static {
     try {
-      resource = ResourceBundle.getBundle("client");
+      clientResource = ResourceBundle.getBundle("client");
+      appResource = ResourceBundle.getBundle("application");
     } catch (Exception e) {
       logger.error("Could not initialize " + AppConfig.class, e);
     }
   }
 
-  public static String getValue(String key) {
+  public static String getClientValue(String key) {
     try {
-      return resource.getString(key);
+      return clientResource.getString(key);
     } catch (Exception e) {
       logger.error("Could not get value for key: {}", key, e);
       return null;
     }
   }
 
-  public static boolean containsKey(String key) {
+  public static boolean clientContainsKey(String key) {
     try {
-      return resource.containsKey(key);
+      return clientResource.containsKey(key);
+    } catch (Exception e) {
+      logger.error("Could not get value for key: {}", key, e);
+      return false;
+    }
+  }
+
+  public static String getAppValue(String key) {
+    try {
+      return appResource.getString(key);
+    } catch (Exception e) {
+      logger.error("Could not get value for key: {}", key, e);
+      return null;
+    }
+  }
+
+  public static boolean appContainsKey(String key) {
+    try {
+      return appResource.containsKey(key);
     } catch (Exception e) {
       logger.error("Could not get value for key: {}", key, e);
       return false;
